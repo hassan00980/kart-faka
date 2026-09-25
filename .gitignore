@@ -1,6 +1,6 @@
 ﻿node_modules/
 *.log
-android/khammeni-v3.apk
+android/khammeni-v*.apk
 android/khammeni-android/app/build/
 android/khammeni-android/.gradle/
 _*
