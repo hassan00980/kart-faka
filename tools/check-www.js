@@ -1,0 +1,13 @@
+const fs = require('fs');
+const www = 'android/khammeni-android/app/src/main/assets/www';
+const html = fs.readFileSync(www + '/index.html', 'utf8');
+const js = fs.readFileSync(www + '/client.js', 'utf8');
+console.log('index v tag:', /client\.js\?v=(\d+)/.exec(html)[1]);
+console.log('no socket.io script:', !html.includes('socket.io/socket.io.js'));
+console.log('picker in html:', html.includes('lobby-category-picker'), '| difficulty-row:', html.includes('difficulty-row'));
+console.log('shim EVENTS set-difficulty:', js.includes("'set-difficulty': 'set-difficulty'"));
+console.log('renderCatPicker:', js.includes('function renderCatPicker'), '| renderDifficulty:', js.includes('function renderDifficulty'));
+console.log('no native select listener:', !js.includes("$('lobby-category').add"));
+console.log('show() early return:', js.includes('if (cur && cur.id === id) return;'));
+console.log('json files:', fs.existsSync(www + '/char-img.json'), fs.existsSync(www + '/char-bio.json'), fs.existsSync(www + '/players.json'));
+console.log('images:', fs.readdirSync(www + '/img/chars').length);

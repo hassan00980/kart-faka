@@ -1,0 +1,74 @@
+{
+  "info": {
+    "id": "ses_f44a10452ffegzcDysLRucV6EF",
+    "projectID": "3e842e115f8c560b0f5e304b683240e7845b8011",
+    "agent": "build",
+    "model": {
+      "id": "jev-1.13-free",
+      "providerID": "opencode",
+      "variant": "default"
+    },
+    "cost": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "time": {
+      "created": 1789849959348,
+      "updated": 1789849959472
+    },
+    "location": {
+      "directory": "D:\\New folder (2)"
+    }
+  },
+  "messages": [
+    {
+      "id": "msg_0bb5efbac001DEsxjntCfv9Hmo",
+      "metadata": {
+        "displayText": "عايز اقوم بانشاء لعبة تعمل لعدة لعبين من اجهزة مختلفة وهي عباره عن تخمين اللاعب ال ظهرلي لك شخص يظهر لية لاعب على هاتفة والاخر يجب ان يخمنه عايز اعملها علشان العبها لما اخرج مع صحابي",
+        "comments": [],
+        "attachments": [],
+        "agent": "build",
+        "model": {
+          "modelID": "jev-1.13-free",
+          "providerID": "opencode"
+        }
+      },
+      "time": {
+        "created": 1789849959526
+      },
+      "text": "عايز اقوم بانشاء لعبة تعمل لعدة لعبين من اجهزة مختلفة وهي عباره عن تخمين اللاعب ال ظهرلي لك شخص يظهر لية لاعب على هاتفة والاخر يجب ان يخمنه عايز اعملها علشان العبها لما اخرج مع صحابي",
+      "files": [],
+      "agents": [],
+      "type": "user"
+    },
+    {
+      "id": "msg_0bb5efc77001Nfarh1HPMG5vdP",
+      "time": {
+        "created": 1789849974332
+      },
+      "type": "assistant",
+      "agent": "build",
+      "model": {
+        "id": "jev-1.13-free",
+        "providerID": "opencode",
+        "variant": "default"
+      },
+      "content": [],
+      "retry": {
+        "attempt": 5,
+        "at": 1789849983254,
+        "error": {
+          "type": "provider.internal",
+          "message": "Internal server error",
+          "status": 500
+        }
+      }
+    }
+  ]
+}

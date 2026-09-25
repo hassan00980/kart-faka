@@ -1,0 +1,9 @@
+node_modules
+android
+.git
+.gitignore
+*.apk
+*.docx
+tools
+test.js
+ui-smoke.js

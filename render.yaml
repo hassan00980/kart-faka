@@ -1,0 +1,18 @@
+# ============================================================
+#   كرت فكة — استضافة أونلاين على Render (مجاني)
+#   الخطوات:
+#     1) ارفع المشروع على GitHub
+#     2) Render → New → Web Service → اربط الريبو (Blueprints بيكتشف الملف ده)
+#     3) هيبني تلقائيًا من الـ Dockerfile — ومفيش إعدادات إضافية
+#   الرابط الناتج: https://<اسم-الخدمة>.onrender.com
+#   ============================================================
+services:
+  - type: web
+    name: kart-faka
+    runtime: docker
+    plan: free
+    region: frankfurt
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 3000
