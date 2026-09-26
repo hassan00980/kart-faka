@@ -70,7 +70,7 @@ public class JoinActivity extends Activity {
         root.addView(scroller, slp);
 
         EditText ipInput = new EditText(this);
-        ipInput.setHint("اكتب عنوان السيرفر يدويًا... مثلاً 192.168.43.1");
+        ipInput.setHint("اكتب العنوان يدويًا... مثال: 192.168.43.1 لشبكتك، أو الصق اللينك الأونلاين https://...");
         ipInput.setTextColor(Color.WHITE);
         ipInput.setHintTextColor(Color.parseColor("#8a87a0"));
         ipInput.setSingleLine(true);
@@ -89,9 +89,18 @@ public class JoinActivity extends Activity {
         mlp.topMargin = dp(8);
         manual.setLayoutParams(mlp);
         manual.setOnClickListener(v -> {
-            String ip = ipInput.getText().toString().trim()
-                    .replace("http://", "").replace("/", "");
-            if (!ip.isEmpty()) openGame("http://" + ip + ":3000");
+            String raw = ipInput.getText().toString().trim();
+            if (raw.isEmpty()) return;
+            String url;
+            if (raw.startsWith("http://") || raw.startsWith("https://")) {
+                // رابط كامل (أونلاين أو محلي) — نستخدمه زي ما هو، مع إزالة / الزائد في الآخر
+                url = raw.replaceAll("/$", "");
+            } else {
+                // عنوان IP محلي على نفس الشبكة — نكمل عليه بورت اللعبة المحلية
+                String clean = raw.replace("http://", "").replace("/", "");
+                url = "http://" + clean + ":3000";
+            }
+            openGame(url);
         });
         root.addView(manual);
 
